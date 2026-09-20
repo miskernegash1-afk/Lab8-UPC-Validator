@@ -27,3 +27,15 @@ def find_upc(first_11):
         check_digit = 10 - remainder
 
     return check_digit
+# Ask the user for a UPC
+while True:
+    upc = input("Enter a 12-digit UPC: ")
+
+    if len(upc) == 12 and upc.isdigit():
+        break
+    else:
+        print("Error: Please enter exactly 12 digits.")
+
+
+# Get the first 11 digits
+first_11 = upc[:11]
