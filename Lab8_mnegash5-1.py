@@ -39,3 +39,33 @@ while True:
 
 # Get the first 11 digits
 first_11 = upc[:11]
+# Get the last digit
+provided_check_digit = int(upc[11])
+
+print()
+print(f"The first 11 digits are '{first_11}'.")
+print(f"The provided check digit is '{provided_check_digit}'.")
+print()
+
+print("Calculating...")
+
+expected_check_digit = find_upc(first_11)
+
+print(f"The expected check digit is {expected_check_digit}.")
+print()
+
+if expected_check_digit == provided_check_digit:
+    print("This is a VALID UPC.")
+else:
+    print("This is an INVALID UPC.")
+# Get the actual 12th digit
+provided_check_digit = int(upc[11])
+
+# Call the function
+expected_check_digit = find_upc(first_11)
+
+# Compare the returned check digit to the actual check digit
+if expected_check_digit == provided_check_digit:
+    print("This is a VALID UPC.")
+else:
+    print("This is an INVALID UPC.")
